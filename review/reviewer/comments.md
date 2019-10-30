@@ -67,4 +67,11 @@ code readers.** They are acceptable only in a few circumstances, such as when
 you are reviewing an area you are not very familiar with and the developer
 explains something that normal readers of the code would have already known.
 
+## Staying On Topic {#on-topic}
+
+Pull request reviews are a source of historical documentation for a project 
+and can help future team members understand why code was reviewed. For this 
+reason, all comments should be related to the review of the code and not 
+include any jokes, sarcasm (see above point about courtesy) or GIFs.
+
 Next: [Handling Pushback in Code Reviews](pushback.md)
