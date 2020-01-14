@@ -12,6 +12,7 @@ read the entire set.
 -   [Speed of Code Reviews](speed.md)
 -   [How to Write Code Review Comments](comments.md)
 -   [Handling Pushback in Code Reviews](pushback.md)
+-   [Creating Technical Debt](tech-debt.md)
 
 See also the [CL Author's Guide](../developer/), which gives detailed guidance
 to developers whose CLs are undergoing review.
