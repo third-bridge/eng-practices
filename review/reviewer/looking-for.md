@@ -185,14 +185,14 @@ If you notice that a new feature flag is being introduced you should verify that
 the feature flag key also exists in the feature flag service (LaunchDarkly). If
 it does not, then inform the code author that it needs to be addressed before
 production deployment, ideally right away. If the application has a
-`.launch-darkly/feature-flags.json` file, then it should also contain the new
-key.
+`<app_root>/.launch-darkly/feature-flags.json` file, then it should also contain
+the new key.
 
 If the last occurrence of a feature flag is being removed, then it should be
 removed from the feature flag service (LaunchDarkly) and the
-`.launch-darkly/feature-flags.json` file after deployment to avoid a periode of
-time in which the feature flag doesn't exist in the service, and uses its
-default behaviour.
+`<app_root>/.launch-darkly/feature-flags.json` file after deployment to avoid a
+periode of time in which the feature flag doesn't exist in the service, and uses
+its default behaviour.
 
 If the new feature flag key doesn't exist in the service then the application
 will default to whatever state the code author set as the default, which may
