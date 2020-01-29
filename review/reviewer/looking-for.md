@@ -179,6 +179,27 @@ mistakes, but they should offer encouragement and appreciation for good
 practices, as well. It’s sometimes even more valuable, in terms of mentoring, to
 tell a developer what they did right than to tell them what they did wrong.
 
+## Feature Flags
+
+If you notice that a new feature flag is being introduced you should verify that
+the feature flag key also exists in the feature flag service (LaunchDarkly). If
+it does not, then inform the code author that it needs to be addressed before
+production deployment, ideally right away. If the application has a
+`<app_root>/.launch-darkly/feature-flags.json` file, then it should also contain
+the new key.
+
+If the last occurrence of a feature flag is being removed, then it should also
+be removed from the feature flags file
+`<app_root>/.launch-darkly/feature-flags.json`, as the file should represent the
+current state of flags being used. After a successful deployment it will be safe
+to remove the feature flag from LaunchDarkly.
+
+If the new feature flag key doesn't exist in the service then the application
+will default to whatever state the code author set as the default, which may
+introduce unintended side-effects once the deployment is complete. Ensure that
+the feature flag is created and that it's set to the state (on/off) you expect
+to deploy with.
+
 ## Summary
 
 In doing a code review, you should make sure that:
@@ -196,6 +217,7 @@ In doing a code review, you should make sure that:
 -   Comments are clear and useful, and mostly explain *why* instead of *what*.
 -   Code is appropriately documented (generally in g3doc).
 -   The code conforms to our style guides.
+-   New feature flags are created and set in LaunchDarkly.
 
 Make sure to review **every line** of code you've been asked to review, look at
 the **context**, make sure you're **improving code health**, and compliment
